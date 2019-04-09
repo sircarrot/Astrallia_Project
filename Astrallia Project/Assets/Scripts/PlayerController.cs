@@ -19,7 +19,7 @@ namespace AstralliaProject
 
         public float forwardSpeed = 7.0f;
         public float backwardSpeed = 2.0f;
-        public float rotateSpeed = 2.0f;
+        //public float rotateSpeed = 2.0f;
         public float jumpPower = 3.0f;
 
         private CapsuleCollider col;
@@ -52,10 +52,9 @@ namespace AstralliaProject
 
         void FixedUpdate()
         {
-            float horizontalAxis = Input.GetAxis("Mouse X");
             float verticalAxis = Input.GetAxis("Vertical");
             anim.SetFloat("Speed", verticalAxis);
-            anim.SetFloat("Direction", horizontalAxis);
+            //anim.SetFloat("Direction", horizontalAxis);
             anim.speed = animSpeed;
             currentBaseState = anim.GetCurrentAnimatorStateInfo(0);
             rb.useGravity = true;
@@ -89,7 +88,7 @@ namespace AstralliaProject
 
             transform.localPosition += velocity * Time.fixedDeltaTime;
 
-            transform.Rotate(0, horizontalAxis * rotateSpeed, 0);
+            //transform.Rotate(0, horizontalAxis * rotateSpeed, 0);
 
             if (currentBaseState.nameHash == locoState)
             {
