@@ -7,17 +7,17 @@ namespace AstralliaProject
     public class CameraController : MonoBehaviour
     {
         public float horRotateSpeed = 2.0f;
-        public float verRotateSpeed = 0.5f;
+        public float verRotateSpeed = 1f;
 
         public float verRotateMax = 45f;
         public float verRotateMin = -40f;
 
         [SerializeField] private Camera cam;
-        [SerializeField] private GameObject player;
+        [SerializeField] private Transform player;
 
         void FixedUpdate()
         {
-            transform.position = player.transform.position;
+            transform.position = player.position;
 
             // Camera movement using Mouse/Right Analog
             float horizontalAxis = Input.GetAxis("Mouse X");

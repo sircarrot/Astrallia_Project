@@ -32,7 +32,7 @@ namespace AstralliaProject
         private Animator anim;
         private AnimatorStateInfo currentBaseState;
 
-        private GameObject cameraObject;
+        private GameObject cam;
 
         static int idleState = Animator.StringToHash("Base Layer.Idle");
         static int locoState = Animator.StringToHash("Base Layer.Locomotion");
@@ -44,7 +44,7 @@ namespace AstralliaProject
             anim = GetComponent<Animator>();
             col = GetComponent<CapsuleCollider>();
             rb = GetComponent<Rigidbody>();
-            cameraObject = GameObject.FindWithTag("MainCamera");
+            cam = GameObject.FindWithTag("MainCamera");
             orgColHight = col.height;
             orgVectColCenter = col.center;
         }
@@ -93,6 +93,8 @@ namespace AstralliaProject
 
             //transform.localPosition += velocity * Time.fixedDeltaTime;
             transform.LookAt(transform.position + moveDirection);
+            rb.velocity = transform.forward * moveSpeed * forwardSpeed;
+
             Debug.Log(moveDirection);
 
             
@@ -105,7 +107,7 @@ namespace AstralliaProject
             }
             else if (currentBaseState.nameHash == jumpState)
             {
-                cameraObject.SendMessage("setCameraPositionJumpView");
+                cam.SendMessage("setCameraPositionJumpView");
 
                 if (!anim.IsInTransition(0))
                 {
