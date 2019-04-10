@@ -52,31 +52,32 @@ namespace AstralliaProject
 
         void FixedUpdate()
         {
+            // Movement
             float verticalAxis = Input.GetAxis("Vertical");
             float horizontalAxis = Input.GetAxis("Horizontal");
 
             Vector3 moveDirection = new Vector3(horizontalAxis, 0, verticalAxis).normalized;
+            Vector3 cameraDirection = cam.transform.position - transform.position;
+            cameraDirection = (new Vector3(cameraDirection.x, 0, cameraDirection.z)).normalized;
+
+            float angle = Vector3.SignedAngle(Vector3.back, cameraDirection, Vector3.up);
+
+            // Apply camera angle to movement direction
+            moveDirection = Quaternion.Euler(0, angle, 0) * moveDirection;
+
             float moveSpeed = Mathf.Sqrt(verticalAxis * verticalAxis + horizontalAxis * horizontalAxis);
+
+            transform.LookAt(transform.position + moveDirection);
+            rb.velocity = transform.forward * moveSpeed * forwardSpeed;
+
+
+
 
             anim.SetFloat("Speed", moveSpeed);
             //anim.SetFloat("Direction", horizontalAxis);
             anim.speed = animSpeed;
             currentBaseState = anim.GetCurrentAnimatorStateInfo(0);
             rb.useGravity = true;
-
-
-            velocity = new Vector3(0, 0, verticalAxis);
-
-            velocity = transform.TransformDirection(velocity);
-
-            if (verticalAxis > 0.1)
-            {
-                velocity *= forwardSpeed;
-            }
-            else if (verticalAxis < -0.1)
-            {
-                velocity *= backwardSpeed;
-            }
 
             if (Input.GetButtonDown("Jump"))
             {
@@ -89,14 +90,6 @@ namespace AstralliaProject
                     }
                 }
             }
-
-
-            //transform.localPosition += velocity * Time.fixedDeltaTime;
-            transform.LookAt(transform.position + moveDirection);
-            rb.velocity = transform.forward * moveSpeed * forwardSpeed;
-
-            Debug.Log(moveDirection);
-
             
             if (currentBaseState.nameHash == locoState)
             {
