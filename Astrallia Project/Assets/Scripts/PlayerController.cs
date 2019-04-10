@@ -53,7 +53,12 @@ namespace AstralliaProject
         void FixedUpdate()
         {
             float verticalAxis = Input.GetAxis("Vertical");
-            anim.SetFloat("Speed", verticalAxis);
+            float horizontalAxis = Input.GetAxis("Horizontal");
+
+            Vector3 moveDirection = new Vector3(horizontalAxis, 0, verticalAxis).normalized;
+            float moveSpeed = Mathf.Sqrt(verticalAxis * verticalAxis + horizontalAxis * horizontalAxis);
+
+            anim.SetFloat("Speed", moveSpeed);
             //anim.SetFloat("Direction", horizontalAxis);
             anim.speed = animSpeed;
             currentBaseState = anim.GetCurrentAnimatorStateInfo(0);
@@ -86,10 +91,11 @@ namespace AstralliaProject
             }
 
 
-            transform.localPosition += velocity * Time.fixedDeltaTime;
+            //transform.localPosition += velocity * Time.fixedDeltaTime;
+            transform.LookAt(transform.position + moveDirection);
+            Debug.Log(moveDirection);
 
-            //transform.Rotate(0, horizontalAxis * rotateSpeed, 0);
-
+            
             if (currentBaseState.nameHash == locoState)
             {
                 if (useCurves)
