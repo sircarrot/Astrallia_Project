@@ -33,6 +33,7 @@ namespace AstralliaProject
         private AnimatorStateInfo currentBaseState;
 
         private GameObject cam;
+        [SerializeField] private GameObject weapon;
 
         static int idleState = Animator.StringToHash("Base Layer.Idle");
         static int locoState = Animator.StringToHash("Base Layer.Locomotion");
@@ -81,14 +82,17 @@ namespace AstralliaProject
 
             if (Input.GetButtonDown("Jump"))
             {
-                if (currentBaseState.nameHash == locoState)
-                {
-                    if (!anim.IsInTransition(0))
-                    {
-                        rb.AddForce(Vector3.up * jumpPower, ForceMode.VelocityChange);
-                        anim.SetBool("Jump", true);
-                    }
-                }
+                anim.SetBool("Alert", !weapon.activeSelf);
+                weapon.SetActive(!weapon.activeSelf);
+
+                //if (currentBaseState.nameHash == locoState)
+                //{
+                //    if (!anim.IsInTransition(0))
+                //    {
+                //        rb.AddForce(Vector3.up * jumpPower, ForceMode.VelocityChange);
+                //        anim.SetBool("Jump", true);
+                //    }
+                //}
             }
             
             if (currentBaseState.nameHash == locoState)
@@ -136,10 +140,10 @@ namespace AstralliaProject
                 {
                     resetCollider();
                 }
-                if (Input.GetButtonDown("Jump"))
-                {
-                    anim.SetBool("Rest", true);
-                }
+                //if (Input.GetButtonDown("Jump"))
+                //{
+                //    anim.SetBool("Rest", true);
+                //}
             }
             else if (currentBaseState.nameHash == restState)
             {
