@@ -6,11 +6,14 @@ namespace AstralliaProject
 {
     public class Enemy : MonoBehaviour
     {
+        [SerializeField] private EnemyDataScriptableObject scriptableObject;
+
+        private EnemyData enemyData;
 
         // Use this for initialization
         void Start()
         {
-
+            InitializeEnemy();
         }
 
         // Update is called once per frame
@@ -19,7 +22,10 @@ namespace AstralliaProject
 
         }
 
-
+        private void InitializeEnemy()
+        {
+            enemyData = scriptableObject.enemyData;
+        }
 
     }
 }
