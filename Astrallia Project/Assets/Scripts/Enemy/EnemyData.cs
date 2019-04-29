@@ -7,4 +7,6 @@ public class EnemyData {
 
     public int hp;
     public int attack;
+    public int expDrop;
+
 }

@@ -36,28 +36,30 @@ namespace AstralliaProject
         [SerializeField] private GameObject weapon;
         private SwordScript swordScript;
 
-        void Start()
+        private bool attacking = false;
+        private bool detectAttack = false;
+        private bool initialized = false;
+
+        void Awake()
         {
-            if(anim == null) GetComponent<Animator>();
-            if(col == null) GetComponent<CapsuleCollider>();
-            if(rb == null) GetComponent<Rigidbody>();
+            if(anim == null) anim = GetComponent<Animator>();
+            if(col == null) col = GetComponent<CapsuleCollider>();
+            if(rb == null) rb = GetComponent<Rigidbody>();
 
             cam = GameObject.FindWithTag("MainCamera");
             orgColHight = col.height;
             orgVectColCenter = col.center;
 
+            swordScript = weapon.GetComponent<SwordScript>();
             swordScript.playerController = this;
+            initialized = true;
         }
 
         void FixedUpdate()
         {
-            if (Input.GetButtonDown("Fire1"))
-            {
-                anim.SetTrigger("Attack");
-                return;
-            }
 
-            // Movement
+
+            // Look At Direction
             float verticalAxis = Input.GetAxis("Vertical");
             float horizontalAxis = Input.GetAxis("Horizontal");
 
@@ -69,18 +71,7 @@ namespace AstralliaProject
 
             // Apply camera angle to movement direction
             moveDirection = Quaternion.Euler(0, angle, 0) * moveDirection;
-
-            float moveSpeed = Mathf.Sqrt(verticalAxis * verticalAxis + horizontalAxis * horizontalAxis);
-
             transform.LookAt(transform.position + moveDirection);
-            rb.velocity = transform.forward * moveSpeed * forwardSpeed;
-
-            anim.SetFloat("Speed", moveSpeed);
-            //anim.SetFloat("Direction", horizontalAxis);
-            anim.speed = animSpeed;
-            currentBaseState = anim.GetCurrentAnimatorStateInfo(0);
-            rb.useGravity = true;
-
 
             if (Input.GetButtonDown("Jump"))
             {
@@ -88,8 +79,55 @@ namespace AstralliaProject
                 weapon.SetActive(!weapon.activeSelf);
             }
 
+            if (Input.GetButtonDown("Fire1"))
+            {
+                anim.SetTrigger("Attack");
+            }
+
+            //if (attacking) return;
+
+            // Movement
+            float moveSpeed = Mathf.Sqrt(verticalAxis * verticalAxis + horizontalAxis * horizontalAxis);
+            rb.velocity = transform.forward * moveSpeed * forwardSpeed;
+            anim.SetFloat("Speed", moveSpeed);
+            anim.speed = animSpeed;
+
+            //currentBaseState = anim.GetCurrentAnimatorStateInfo(0);
+            //rb.useGravity = true;
+
 
         }
 
+        // Event for impact
+        public void BeginAttackEvent()
+        {
+            detectAttack = true;
+        }
+
+        public void EndAttackEvent()
+        {
+            detectAttack = false;
+        }
+
+
+        public void AttackCollision(Collider collider)
+        {
+            if (detectAttack)
+            {
+                Debug.Log("Hit");
+                detectAttack = false;
+            }
+        }
+
+        //private void OnAnimatorMove()
+        //{
+        //    if (anim)
+        //    {
+        //        Vector3 newPosition = transform.position;
+        //        //newPosition.z += animator.GetFloat("Runspeed") * Time.deltaTime;
+        //        newPosition += transform.forward * Time.deltaTime * anim.GetFloat("Speed");
+        //        transform.position = newPosition;
+        //    }
+        //}
     }
 }

@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Name: StoneMonster
   m_EditorClassIdentifier: 
   enemyData:
-    hp: 10
-    attack: 3
+    hp: 20
+    attack: 5
+    expDrop: 5
