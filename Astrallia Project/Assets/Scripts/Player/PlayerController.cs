@@ -11,16 +11,16 @@ namespace AstralliaProject
     public class PlayerController : MonoBehaviour
     {
 
-        public float animSpeed = 1.5f;
-        public float lookSmoother = 3.0f;
-        public bool useCurves = true;
+        //public float animSpeed = 1.5f;
+        //public float lookSmoother = 3.0f;
+        //public bool useCurves = true;
 
-        public float useCurvesHeight = 0.5f;
+        //public float useCurvesHeight = 0.5f;
 
         public float forwardSpeed = 7.0f;
-        public float backwardSpeed = 2.0f;
+        //public float backwardSpeed = 2.0f;
         //public float rotateSpeed = 2.0f;
-        public float jumpPower = 3.0f;
+        //public float jumpPower = 3.0f;
 
         private CapsuleCollider col;
         private Rigidbody rb;
@@ -35,10 +35,9 @@ namespace AstralliaProject
         private GameObject cam;
         [SerializeField] private GameObject weapon;
         private SwordScript swordScript;
+        private PlayerData playerData;
 
-        private bool attacking = false;
         private bool detectAttack = false;
-        private bool initialized = false;
 
         void Awake()
         {
@@ -52,13 +51,10 @@ namespace AstralliaProject
 
             swordScript = weapon.GetComponent<SwordScript>();
             swordScript.playerController = this;
-            initialized = true;
         }
 
         void FixedUpdate()
         {
-
-
             // Look At Direction
             float verticalAxis = Input.GetAxis("Vertical");
             float horizontalAxis = Input.GetAxis("Horizontal");
@@ -81,16 +77,18 @@ namespace AstralliaProject
 
             if (Input.GetButtonDown("Fire1"))
             {
-                anim.SetTrigger("Attack");
+                if (weapon.activeSelf)
+                {
+                    anim.SetTrigger("Attack");
+                }
             }
 
-            //if (attacking) return;
+            if (rb.isKinematic) return;
 
             // Movement
             float moveSpeed = Mathf.Sqrt(verticalAxis * verticalAxis + horizontalAxis * horizontalAxis);
             rb.velocity = transform.forward * moveSpeed * forwardSpeed;
             anim.SetFloat("Speed", moveSpeed);
-            anim.speed = animSpeed;
 
             //currentBaseState = anim.GetCurrentAnimatorStateInfo(0);
             //rb.useGravity = true;
@@ -98,36 +96,46 @@ namespace AstralliaProject
 
         }
 
+        #region Animation Events
+        public void KinematicsOff()
+        {
+            rb.isKinematic = false;
+        }
+
+        public void KinematicsOn()
+        {
+            rb.isKinematic = true;
+        }
+
         // Event for impact
         public void BeginAttackEvent()
         {
             detectAttack = true;
+            Debug.Log("Begin Attack");
         }
 
         public void EndAttackEvent()
         {
             detectAttack = false;
+            Debug.Log("End Attack");
         }
 
+        #endregion
 
         public void AttackCollision(Collider collider)
         {
-            if (detectAttack)
+            if (!detectAttack) return;
+
+            if(collider.tag == "Enemy")
             {
+                Enemy enemy = collider.GetComponent<Enemy>();
                 Debug.Log("Hit");
                 detectAttack = false;
+
+                // Apply damage
+                // Damage animation
+
             }
         }
-
-        //private void OnAnimatorMove()
-        //{
-        //    if (anim)
-        //    {
-        //        Vector3 newPosition = transform.position;
-        //        //newPosition.z += animator.GetFloat("Runspeed") * Time.deltaTime;
-        //        newPosition += transform.forward * Time.deltaTime * anim.GetFloat("Speed");
-        //        transform.position = newPosition;
-        //    }
-        //}
     }
 }

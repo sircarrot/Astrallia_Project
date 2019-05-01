@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using CarrotPack;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -11,7 +12,9 @@ namespace AstralliaProject
 
         private Animator animator;
         private EnemyData enemyData;
-        public GameObject player;
+        private GameObject player;
+
+        public bool chasePlayer = false;
 
         // Use this for initialization
         void Start()
@@ -25,7 +28,12 @@ namespace AstralliaProject
         // Update is called once per frame
         void Update()
         {
-            gameObject.GetComponent<NavMeshAgent>().destination = player.transform.position;
+            // Update chase player
+
+            if(chasePlayer)
+            {
+                gameObject.GetComponent<NavMeshAgent>().destination = player.transform.position;
+            }
         }
 
         private void InitializeEnemy()
@@ -43,12 +51,16 @@ namespace AstralliaProject
             {
                 Death();
             }
+            else
+            {
+                animator.SetTrigger("Damage");
+            }
         }
 
         public void Death()
         {
-            // Death animation
-            // Give player exp
+            animator.SetTrigger("Death");
+            // Exp
         }
 
         public void Attack()
@@ -56,4 +68,6 @@ namespace AstralliaProject
 
         }
     }
+
+
 }
