@@ -32,6 +32,7 @@ namespace AstralliaProject
         void Update()
         {
             // Update chase player
+            attackCountdown -= Time.deltaTime;
 
             if(chasePlayer)
             {
