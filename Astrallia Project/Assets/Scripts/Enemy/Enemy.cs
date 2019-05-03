@@ -16,6 +16,9 @@ namespace AstralliaProject
 
         public bool chasePlayer = false;
 
+        public static float attackDelay = 4f;
+        public float attackCountdown;
+
         // Use this for initialization
         void Start()
         {
@@ -34,19 +37,27 @@ namespace AstralliaProject
             {
                 gameObject.GetComponent<NavMeshAgent>().destination = player.transform.position;
             }
+
+            if(attackCountdown <= 0f)
+            {
+                Attack();
+                attackCountdown = attackDelay;
+            }
         }
 
         private void InitializeEnemy()
         {
-            enemyData = scriptableObject.enemyData;
             if (animator == null) animator = GetComponent<Animator>();
+
+            enemyData = new EnemyData(scriptableObject.enemyData);
+            attackCountdown = attackDelay;
         }
 
         public void Damage(int rawDamage)
         {
             enemyData.hp -= rawDamage;
 
-            Debug.Log(enemyData.hp);
+            Debug.Log(gameObject.name + " " +  enemyData.hp);
             if (enemyData.hp <= 0)
             {
                 Death();
@@ -59,13 +70,14 @@ namespace AstralliaProject
 
         public void Death()
         {
-            animator.SetTrigger("Death");
+            Debug.Log("Death");
+            animator.SetBool("Death", true);
             // Exp
         }
 
         public void Attack()
         {
-
+            animator.SetTrigger("Attack");
         }
     }
 

@@ -9,4 +9,11 @@ public class EnemyData {
     public int attack;
     public int expDrop;
 
+    public EnemyData(EnemyData enemyData)
+    {
+        hp = enemyData.hp;
+        attack = enemyData.attack;
+        expDrop = enemyData.expDrop;
+    }
+
 }
