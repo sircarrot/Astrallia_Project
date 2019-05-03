@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 54316306458177320}
   m_Layer: 0
   m_Name: StoneMonster
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -334,7 +334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptableObject: {fileID: 11400000, guid: c2fb866cfd5e8d64a85eef68f455d182, type: 2}
-  player: {fileID: 0}
+  chasePlayer: 0
 --- !u!137 &137441764143394532
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
