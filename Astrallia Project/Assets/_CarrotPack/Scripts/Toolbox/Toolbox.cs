@@ -10,16 +10,13 @@ namespace CarrotPack
 
         private List<IManager> managerList = new List<IManager>();
 
-        private void Awake()
-        {
-            DontDestroyOnLoad(gameObject);
-        }
-
         /// <summary>
         ///  Calls all the necessary managers upon game start
         /// </summary>
-        private void Start()
+        private void Awake()
         {
+            DontDestroyOnLoad(gameObject);
+
             // Adds all manager to list first
             foreach (IManager manager in gameObject.GetComponents<IManager>())
             {
