@@ -6,69 +6,23 @@ namespace AstralliaProject
 {
     public class PlayerData : MonoBehaviour
     {
-        public int CurrentHP
-        {
-            get { return currentHp; }
-        }
-
-        public int MaxHP
-        {
-            get { return maxHp; }
-        }
-
-        public int DefensePower
-        {
-            get
-            {
-                return defensePower;
-            }
-        }
-
-        public int AttackPower
-        {
-            get
-            {
-                return attackPower;
-            }
-        }
-
-        public int Exp
-        {
-            get
-            {
-                return exp;
-            }
-        }
-
-        public int Level
-        {
-            get
-            {
-                return level;
-            }
-        }
-
-        [SerializeField] private int currentHp;
-        [SerializeField] private int maxHp;
-        [SerializeField] private int defensePower;
-        [SerializeField] private int attackPower;
-        [SerializeField] private int exp;
-        [SerializeField] private int level;
+        public int currentHp;
+        public int maxHp;
+        public int attackPower;
+        public int defensePower;
+        public int exp;
+        public int level;
 
         public void Damage(int rawDamage)
         {
-            currentHp -= (rawDamage - defensePower);
+            // Min damage of 1
+            currentHp -= Mathf.Max(rawDamage - defensePower, 1);
         }
 
-        public void Attack(Enemy enemy)
-        {
-            enemy.Damage(attackPower);
-        }
-
-        public void GainEXP(int exp)
+        public void GainExp(int exp)
         {
             exp += exp;
-            if (exp > 100)
+            if (exp > (100 + 10*(level-1)))
             {
                 LevelUp();
             }
@@ -86,7 +40,5 @@ namespace AstralliaProject
             currentHp += amount;
             if (currentHp > maxHp) currentHp = maxHp;
         }
-
-
     }
 }

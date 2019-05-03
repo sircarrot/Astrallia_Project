@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using CarrotPack;
 
 namespace AstralliaProject
 {
@@ -36,10 +36,11 @@ namespace AstralliaProject
         [SerializeField] private GameObject weapon;
         private SwordScript swordScript;
         private PlayerData playerData;
+        private GameManager gameManager;
 
         private bool detectAttack = false;
 
-        void Awake()
+        void Start()
         {
             if(anim == null) anim = GetComponent<Animator>();
             if(col == null) col = GetComponent<CapsuleCollider>();
@@ -51,6 +52,9 @@ namespace AstralliaProject
 
             swordScript = weapon.GetComponent<SwordScript>();
             swordScript.playerController = this;
+
+            gameManager = Toolbox.Instance.GetManager<GameManager>();
+            playerData = gameManager.playerData;
         }
 
         void FixedUpdate()
@@ -128,7 +132,9 @@ namespace AstralliaProject
 
             if(collider.tag == "Enemy")
             {
+                Debug.Log(collider.name);
                 Enemy enemy = collider.GetComponent<Enemy>();
+                Attack(enemy);
                 Debug.Log("Hit");
                 detectAttack = false;
 
@@ -137,5 +143,23 @@ namespace AstralliaProject
 
             }
         }
+
+
+        #region Data Usage Functions
+        public void Damage(int rawDamage)
+        {
+            playerData.Damage(rawDamage);
+        }
+
+        public void Attack(Enemy enemy)
+        {
+            enemy.Damage(playerData.attackPower);
+        }
+
+        public void KillEnemy(int exp)
+        {
+            playerData.GainExp(exp);
+        }
+        #endregion
     }
 }
