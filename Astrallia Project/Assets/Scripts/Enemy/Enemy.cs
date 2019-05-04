@@ -12,20 +12,20 @@ namespace AstralliaProject
 
         private Animator animator;
         private EnemyData enemyData;
-        private GameObject player;
+        private PlayerController player;
+
+        private GameManager gameManager;
 
         public bool chasePlayer = false;
 
         public static float attackDelay = 4f;
         public float attackCountdown;
+        private bool detectAttack = false;
 
         // Use this for initialization
         void Start()
         {
             InitializeEnemy();
-            //gameObject.GetComponent<NavMeshAgent>().Move(new De(50, 0, 50));
-            //gameObject.GetComponent<NavMeshAgent>().SetDestination(new Vector3(50,0,50));
-
         }
 
         // Update is called once per frame
@@ -51,6 +51,9 @@ namespace AstralliaProject
             if (animator == null) animator = GetComponent<Animator>();
 
             enemyData = new EnemyData(scriptableObject.enemyData);
+            gameManager = Toolbox.Instance.GetManager<GameManager>();
+            player = gameManager.PlayerController;
+
             attackCountdown = attackDelay;
         }
 
@@ -73,12 +76,38 @@ namespace AstralliaProject
         {
             Debug.Log("Death");
             animator.SetBool("Death", true);
+
             // Exp
         }
 
         public void Attack()
         {
             animator.SetTrigger("Attack");
+        }
+
+        #region Animation Event
+        public void BeginAttackEvent()
+        {
+            detectAttack = true;
+        }
+
+        public void EndAttackEvent()
+        {
+            detectAttack = false;
+            animator.ResetTrigger("Damage");
+        }
+        #endregion
+
+        public void AttackCollision(Collider collider)
+        {
+            if (!detectAttack) return;
+
+            if (collider.tag == "Player")
+            {
+                player.Damage(enemyData.attack);
+                Debug.Log("Player Hit");
+
+            }
         }
     }
 

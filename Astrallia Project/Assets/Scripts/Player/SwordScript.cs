@@ -8,6 +8,11 @@ namespace AstralliaProject
     {
         public PlayerController playerController;
 
+        private void Start()
+        {
+            if (playerController == null) playerController = GetComponentInParent<PlayerController>();
+        }
+
         private void OnTriggerEnter(Collider other)
         {
             Debug.Log(other.name);

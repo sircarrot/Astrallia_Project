@@ -104,6 +104,9 @@ namespace AstralliaProject
         public void KinematicsOff()
         {
             rb.isKinematic = false;
+            detectAttack = false;
+
+            anim.ResetTrigger("Attack");
         }
 
         public void KinematicsOn()
@@ -115,16 +118,12 @@ namespace AstralliaProject
         public void BeginAttackEvent()
         {
             detectAttack = true;
-            Debug.Log("Begin Attack");
         }
 
         public void EndAttackEvent()
         {
             detectAttack = false;
-            Debug.Log("End Attack");
         }
-
-        #endregion
 
         public void AttackCollision(Collider collider)
         {
@@ -132,28 +131,25 @@ namespace AstralliaProject
 
             if(collider.tag == "Enemy")
             {
-                Debug.Log(collider.name);
+                Debug.Log(collider.name + " Hit");
                 Enemy enemy = collider.GetComponent<Enemy>();
+
                 Attack(enemy);
-                Debug.Log("Hit");
                 detectAttack = false;
-
-                // Apply damage
-                // Damage animation
-
             }
         }
-
+        #endregion
 
         #region Data Usage Functions
-        public void Damage(int rawDamage)
-        {
-            playerData.Damage(rawDamage);
-        }
-
         public void Attack(Enemy enemy)
         {
             enemy.Damage(playerData.attackPower);
+        }
+
+        public void Damage(int rawDamage)
+        {
+            anim.SetTrigger("Damage");
+            playerData.Damage(rawDamage);
         }
 
         public void KillEnemy(int exp)
