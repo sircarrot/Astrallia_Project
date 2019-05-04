@@ -38,7 +38,11 @@ namespace AstralliaProject
         private PlayerData playerData;
         private GameManager gameManager;
 
+        //private bool damagedEvent = false;
         private bool detectAttack = false;
+
+        static int damageState = Animator.StringToHash("Base Layer.Damage");
+        static int deathState = Animator.StringToHash("Base Layer.Death");
 
         void Start()
         {
@@ -59,6 +63,14 @@ namespace AstralliaProject
 
         void FixedUpdate()
         {
+            // Cannot move when damaged/dead
+            currentBaseState = anim.GetCurrentAnimatorStateInfo(0);
+            if(currentBaseState.fullPathHash == damageState 
+                || currentBaseState.fullPathHash == deathState)
+            {
+                return;
+            }
+
             // Look At Direction
             float verticalAxis = Input.GetAxis("Vertical");
             float horizontalAxis = Input.GetAxis("Horizontal");
@@ -113,6 +125,18 @@ namespace AstralliaProject
         {
             rb.isKinematic = true;
         }
+
+        //public void DamagedEvent()
+        //{
+
+        //    KinematicsOn();
+        //}
+
+        //public void RecoverDamagedEvent()
+        //{
+
+        //    KinematicsOff();
+        //}
 
         // Event for impact
         public void BeginAttackEvent()

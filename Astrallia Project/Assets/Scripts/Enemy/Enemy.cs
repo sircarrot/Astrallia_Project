@@ -13,6 +13,7 @@ namespace AstralliaProject
         private Animator animator;
         private EnemyData enemyData;
         private PlayerController player;
+        private NavMeshAgent navMeshAgent;
 
         private GameManager gameManager;
 
@@ -22,6 +23,10 @@ namespace AstralliaProject
         public float attackCountdown;
         private bool detectAttack = false;
 
+        private AnimatorStateInfo currentBaseState;
+        static int deathState = Animator.StringToHash("Base Layer.Death");
+        static int attackingState = Animator.StringToHash("Base Layer.Death");
+
         // Use this for initialization
         void Start()
         {
@@ -29,26 +34,45 @@ namespace AstralliaProject
         }
 
         // Update is called once per frame
-        void Update()
+        void FixedUpdate()
         {
-            // Update chase player
-            attackCountdown -= Time.deltaTime;
-
-            if(chasePlayer)
+            currentBaseState = animator.GetCurrentAnimatorStateInfo(0);
+            if (currentBaseState.fullPathHash == deathState
+                || currentBaseState.fullPathHash == attackingState)
             {
-                gameObject.GetComponent<NavMeshAgent>().destination = player.transform.position;
+                return;
             }
 
-            if(attackCountdown <= 0f)
+            float velocity = navMeshAgent.velocity.magnitude;
+            animator.SetFloat("Speed", navMeshAgent.velocity.magnitude);
+
+            // Wandering Around State
+
+
+
+            // Chase Player State
+            if(chasePlayer)
             {
-                Attack();
-                attackCountdown = attackDelay;
+                navMeshAgent.destination = player.transform.position;
+                Vector3 lookAtVector = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
+                transform.LookAt(lookAtVector);
+
+                if (velocity > 0.5) return;
+
+                attackCountdown -= Time.deltaTime;
+
+                if (attackCountdown <= 0f)
+                {
+                    Attack();
+                    attackCountdown = attackDelay;
+                }
             }
         }
 
         private void InitializeEnemy()
         {
             if (animator == null) animator = GetComponent<Animator>();
+            if (navMeshAgent == null) navMeshAgent = GetComponent<NavMeshAgent>();
 
             enemyData = new EnemyData(scriptableObject.enemyData);
             gameManager = Toolbox.Instance.GetManager<GameManager>();
@@ -57,6 +81,7 @@ namespace AstralliaProject
             attackCountdown = attackDelay;
         }
 
+        #region Basic Gameplay Functions
         public void Damage(int rawDamage)
         {
             enemyData.hp -= rawDamage;
@@ -84,6 +109,7 @@ namespace AstralliaProject
         {
             animator.SetTrigger("Attack");
         }
+        #endregion
 
         #region Animation Event
         public void BeginAttackEvent()
@@ -96,7 +122,7 @@ namespace AstralliaProject
             detectAttack = false;
             animator.ResetTrigger("Damage");
         }
-        #endregion
+
 
         public void AttackCollision(Collider collider)
         {
@@ -104,11 +130,12 @@ namespace AstralliaProject
 
             if (collider.tag == "Player")
             {
+                detectAttack = false;
                 player.Damage(enemyData.attack);
                 Debug.Log("Player Hit");
-
             }
         }
+        #endregion
     }
 
 

@@ -186,8 +186,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1506278450666620}
-  m_LocalRotation: {x: 0.70624334, y: -0.03493462, z: -0.70624334, w: 0.034934614}
-  m_LocalPosition: {x: 0.0000000080335045, y: 0.3987669, z: -0.18378516}
+  m_LocalRotation: {x: 0.9031099, y: -0.01981922, z: -0.4268093, w: 0.042820692}
+  m_LocalPosition: {x: 0.0000000080335045, y: 0.7807809, z: -0.18378516}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4830241603717364}
@@ -229,7 +229,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1580525566385236}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 263.76, y: 1.5, z: 194.3}
+  m_LocalPosition: {x: 263.76, y: 1, z: 194.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4294345042779436}
@@ -257,7 +257,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1174125935644948}
-  m_LocalRotation: {x: 0, y: 0, z: -0.5049087, w: 0.8631728}
+  m_LocalRotation: {x: 0, y: 0, z: -0.5049087, w: 0.86317277}
   m_LocalPosition: {x: -0.18503706, y: -0.000000038146972, z: 5.684342e-16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -286,7 +286,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1580525566385236}
   serializedVersion: 2
-  m_Mass: 10
+  m_Mass: 1000
   m_Drag: 100
   m_AngularDrag: 10
   m_UseGravity: 1
@@ -304,8 +304,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 0.8, z: 0.8}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.5, y: 2, z: 0.5}
+  m_Center: {x: -0.5, y: 0.5, z: 0}
 --- !u!65 &65809919403289008
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -316,8 +316,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0.55, z: 0}
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!95 &95319726324401324
 Animator:
   serializedVersion: 3
@@ -360,8 +360,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptableObject: {fileID: 11400000, guid: c2fb866cfd5e8d64a85eef68f455d182, type: 2}
-  chasePlayer: 0
-  attackCountdown: 0
+  chasePlayer: 1
+  attackCountdown: 0.47924384
 --- !u!137 &137441764143394532
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -434,6 +434,6 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 1
+  m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
