@@ -10,17 +10,7 @@ namespace AstralliaProject
 
     public class PlayerController : MonoBehaviour
     {
-
-        //public float animSpeed = 1.5f;
-        //public float lookSmoother = 3.0f;
-        //public bool useCurves = true;
-
-        //public float useCurvesHeight = 0.5f;
-
         public float forwardSpeed = 7.0f;
-        //public float backwardSpeed = 2.0f;
-        //public float rotateSpeed = 2.0f;
-        //public float jumpPower = 3.0f;
 
         private CapsuleCollider col;
         private Rigidbody rb;
@@ -38,7 +28,6 @@ namespace AstralliaProject
         private PlayerData playerData;
         private GameManager gameManager;
 
-        //private bool damagedEvent = false;
         private bool detectAttack = false;
 
         static int damageState = Animator.StringToHash("Base Layer.Damage");
@@ -105,11 +94,6 @@ namespace AstralliaProject
             float moveSpeed = Mathf.Sqrt(verticalAxis * verticalAxis + horizontalAxis * horizontalAxis);
             rb.velocity = transform.forward * moveSpeed * forwardSpeed;
             anim.SetFloat("Speed", moveSpeed);
-
-            //currentBaseState = anim.GetCurrentAnimatorStateInfo(0);
-            //rb.useGravity = true;
-
-
         }
 
         #region Animation Events
@@ -126,19 +110,7 @@ namespace AstralliaProject
             rb.isKinematic = true;
         }
 
-        //public void DamagedEvent()
-        //{
-
-        //    KinematicsOn();
-        //}
-
-        //public void RecoverDamagedEvent()
-        //{
-
-        //    KinematicsOff();
-        //}
-
-        // Event for impact
+        // Event for attack impact
         public void BeginAttackEvent()
         {
             detectAttack = true;

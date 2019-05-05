@@ -17,7 +17,8 @@ namespace AstralliaProject
 
         private GameManager gameManager;
 
-        public bool chasePlayer = false;
+        private static float aggroDistance = 6f;
+        private bool chasePlayer = false;
 
         public static float attackDelay = 4f;
         public float attackCountdown;
@@ -46,8 +47,19 @@ namespace AstralliaProject
             float velocity = navMeshAgent.velocity.magnitude;
             animator.SetFloat("Speed", navMeshAgent.velocity.magnitude);
 
-            // Wandering Around State
+            // Setting States
+            //Debug.Log("Distance: " + (player.transform.position - gameObject.transform.position).magnitude);
+            if((player.transform.position - gameObject.transform.position).magnitude <= aggroDistance)
+            {
+                chasePlayer = true;
+            }
+            else
+            {
+                chasePlayer = false;
+            }
 
+            // Wandering Around State
+            
 
 
             // Chase Player State
