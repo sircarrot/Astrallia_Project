@@ -35,6 +35,12 @@ namespace AstralliaProject
         public void KillEnemy(int exp)
         {
             playerData.GainExp(exp);
+            uiManager.HideEnemyHPBar();
+        }
+
+        public void HitEnemy(int currentHp, int maxHp)
+        {
+            uiManager.UpdateEnemyHP(currentHp, maxHp);
         }
         #endregion
     }

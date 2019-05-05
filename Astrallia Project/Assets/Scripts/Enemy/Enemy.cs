@@ -98,6 +98,8 @@ namespace AstralliaProject
         {
             enemyData.currentHp -= rawDamage;
 
+            gameManager.HitEnemy(enemyData.currentHp, enemyData.maxHp);
+
             Debug.Log(gameObject.name + " " +  enemyData.currentHp);
             if (enemyData.currentHp <= 0)
             {
