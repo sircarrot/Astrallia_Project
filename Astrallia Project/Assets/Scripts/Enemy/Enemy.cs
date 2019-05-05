@@ -96,10 +96,10 @@ namespace AstralliaProject
         #region Basic Gameplay Functions
         public void Damage(int rawDamage)
         {
-            enemyData.hp -= rawDamage;
+            enemyData.currentHp -= rawDamage;
 
-            Debug.Log(gameObject.name + " " +  enemyData.hp);
-            if (enemyData.hp <= 0)
+            Debug.Log(gameObject.name + " " +  enemyData.currentHp);
+            if (enemyData.currentHp <= 0)
             {
                 Death();
             }
@@ -114,7 +114,8 @@ namespace AstralliaProject
             Debug.Log("Death");
             animator.SetBool("Death", true);
 
-            // Exp
+            gameManager.KillEnemy(enemyData.expDrop);
+            Destroy(this);
         }
 
         public void Attack()
@@ -148,6 +149,17 @@ namespace AstralliaProject
             }
         }
         #endregion
+
+        void OnGUI()
+        {
+
+            Vector2 targetPos;
+            targetPos = Camera.main.WorldToScreenPoint(transform.position);
+
+            GUI.Box(new Rect(targetPos.x, Screen.height - transform.position.y, 60, 20), enemyData.currentHp + "/" + enemyData.maxHp);
+
+        }
+
     }
 
 

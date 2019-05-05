@@ -284,7 +284,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -38, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &254576822
@@ -1039,8 +1039,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 284.24, y: -26.599976}
-  m_SizeDelta: {x: 66.38, y: 30}
+  m_AnchoredPosition: {x: 285.23, y: -26.599976}
+  m_SizeDelta: {x: 64.44, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &909186243
 MonoBehaviour:
@@ -1074,7 +1074,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: LV. 100
+  m_Text: 'LV: 100'
 --- !u!222 &909186244
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1806,7 +1806,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.17416191, a: 1}
+  m_Color: {r: 0, g: 0.8773585, b: 0.06935796, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2211,6 +2211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 0}
   playerData: {fileID: 1914913591}
+  uiManager: {fileID: 0}
 --- !u!1 &2003931975
 GameObject:
   m_ObjectHideFlags: 0
@@ -2340,6 +2341,11 @@ Prefab:
         type: 2}
       propertyPath: maxHp
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 54845378993774322, guid: 7004b1e13cb2ca645b2f7c315c93f0be,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 112
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114182263153031282, guid: 7004b1e13cb2ca645b2f7c315c93f0be, type: 2}

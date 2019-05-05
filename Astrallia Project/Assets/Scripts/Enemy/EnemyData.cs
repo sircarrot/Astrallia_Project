@@ -5,13 +5,15 @@ using UnityEngine;
 [System.Serializable]
 public class EnemyData {
 
-    public int hp;
+    [HideInInspector] public int currentHp;
+    public int maxHp;
     public int attack;
     public int expDrop;
 
     public EnemyData(EnemyData enemyData)
     {
-        hp = enemyData.hp;
+        maxHp = enemyData.maxHp;
+        currentHp = maxHp;
         attack = enemyData.attack;
         expDrop = enemyData.expDrop;
     }

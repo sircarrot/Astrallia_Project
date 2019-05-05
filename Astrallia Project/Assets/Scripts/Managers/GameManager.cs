@@ -23,12 +23,19 @@ namespace AstralliaProject
         [SerializeField] private PlayerController playerController;
         public PlayerData playerData;
 
+        public UIManager uiManager;
+
+
         public void InitializeManager()
         {
+            uiManager = Toolbox.Instance.GetManager<UIManager>();
         }
 
         #region PlayerFunctions
-
+        public void KillEnemy(int exp)
+        {
+            playerData.GainExp(exp);
+        }
         #endregion
     }
 }

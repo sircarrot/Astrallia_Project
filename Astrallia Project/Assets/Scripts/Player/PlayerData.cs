@@ -33,9 +33,9 @@ namespace AstralliaProject
             ChangeHPEvent(currentHp, maxHp);
         }
 
-        public void GainExp(int exp)
+        public void GainExp(int expGain)
         {
-            exp += exp;
+            exp += expGain;
             if (exp > (100 + 10*(level-1)))
             {
                 exp -= (100 + 10 * (level - 1));
@@ -47,7 +47,8 @@ namespace AstralliaProject
         {
             Heal(maxHp);
             attackPower++;
-            defensePower++;
+            maxHp += 5;
+            // Don't raise defense power
             level++;
             
             // Call event

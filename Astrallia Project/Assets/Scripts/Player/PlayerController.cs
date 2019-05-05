@@ -148,10 +148,6 @@ namespace AstralliaProject
             playerData.Damage(rawDamage);
         }
 
-        public void KillEnemy(int exp)
-        {
-            playerData.GainExp(exp);
-        }
         #endregion
     }
 }
