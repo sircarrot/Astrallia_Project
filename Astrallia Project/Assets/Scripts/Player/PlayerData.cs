@@ -13,10 +13,24 @@ namespace AstralliaProject
         public int exp;
         public int level;
 
+        public delegate void OnChangeHP(int currentHP, int maxHP);
+        public event OnChangeHP ChangeHPEvent;
+
+        public delegate void OnLevelUp(int level);
+        public event OnLevelUp LevelUpEvent;
+
+        public void InitializeUI()
+        {
+            ChangeHPEvent(currentHp, maxHp);
+            LevelUpEvent(level);
+        }
+
         public void Damage(int rawDamage)
         {
             // Min damage of 1
             currentHp -= Mathf.Max(rawDamage - defensePower, 1);
+
+            ChangeHPEvent(currentHp, maxHp);
         }
 
         public void GainExp(int exp)
@@ -24,6 +38,7 @@ namespace AstralliaProject
             exp += exp;
             if (exp > (100 + 10*(level-1)))
             {
+                exp -= (100 + 10 * (level - 1));
                 LevelUp();
             }
         }
@@ -33,12 +48,18 @@ namespace AstralliaProject
             Heal(maxHp);
             attackPower++;
             defensePower++;
+            level++;
+            
+            // Call event
+            LevelUpEvent(level);
         }
 
         public void Heal(int amount)
         {
             currentHp += amount;
             if (currentHp > maxHp) currentHp = maxHp;
+
+            ChangeHPEvent(currentHp, maxHp);
         }
     }
 }
