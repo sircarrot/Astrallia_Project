@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: FantasyBee
+  m_Controller: {fileID: 9100000, guid: b02daefa767000645b7d38adefc2b349, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 3cab52bd39b9a5f4fb028f9ae0ecbc91, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 27a32759d4052dc4e92960cc22f85b43, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: 8af2259933ccf2e47b0a9493f3516fc4, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: bf08099f47de1fc41b16049eb23d1825, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: 3e63abeab47efea44a9868d7d769abcf, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 5ce6514caef230342967d687ee6128ca, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: 6098175c4d4a46343be4d6857847330b, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 0423eb658892a324e986537f2c8f25e4, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: 87aca181203408543942305a65e47c0b, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 02332556bea4c4842b56d35cf2b338bc, type: 3}

@@ -117,7 +117,27 @@ namespace AstralliaProject
             animator.SetBool("Death", true);
 
             gameManager.KillEnemy(enemyData.expDrop);
-            Destroy(this);
+
+            StartCoroutine(DeathCoroutine());
+            //Destroy(this);
+        }
+
+        private IEnumerator DeathCoroutine()
+        {
+            float coroutineDuration = 5f;
+            while (navMeshAgent.baseOffset > 0f)
+            {
+                navMeshAgent.baseOffset -= (0.5f * Time.deltaTime);
+                yield return new WaitForEndOfFrame();
+            }
+
+            while(coroutineDuration > 0f)
+            {
+                coroutineDuration -= Time.deltaTime;
+                yield return new WaitForEndOfFrame();
+            }
+
+            Destroy(this.gameObject);
         }
 
         public void Attack()
