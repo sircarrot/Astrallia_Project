@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 222239110625351820}
   - component: {fileID: 114521444213920772}
   m_Layer: 0
-  m_Name: Image
+  m_Name: ScreenTransition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 114697192670120502}
   - component: {fileID: 114427354831494542}
   - component: {fileID: 95368617922842168}
+  - component: {fileID: 114832188134875722}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -873,6 +874,17 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114832188134875722
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1122317709197098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c2c97aa06ff30748a305a52dcfcc9e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114910154651443578
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1029,7 +1041,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &224023233210800892
 RectTransform:

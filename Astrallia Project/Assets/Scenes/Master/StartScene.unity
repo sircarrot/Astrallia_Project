@@ -282,22 +282,6 @@ Transform:
   m_Father: {fileID: 1174709690}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &239943527 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1122317709197098, guid: 9e07394cf3815b946a98471554a09b0c,
-    type: 2}
-  m_PrefabInternal: {fileID: 711521750}
---- !u!114 &239943533
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 239943527}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c2c97aa06ff30748a305a52dcfcc9e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &254576822
 Prefab:
   m_ObjectHideFlags: 0
@@ -570,30 +554,6 @@ Prefab:
     - target: {fileID: 4922111469508874, guid: 9e07394cf3815b946a98471554a09b0c, type: 2}
       propertyPath: m_RootOrder
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224278328403079630, guid: 9e07394cf3815b946a98471554a09b0c,
-        type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1003952977359182, guid: 9e07394cf3815b946a98471554a09b0c, type: 2}
-      propertyPath: m_Name
-      value: ScreenTransition
-      objectReference: {fileID: 0}
-    - target: {fileID: 114521444213920772, guid: 9e07394cf3815b946a98471554a09b0c,
-        type: 2}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 95368617922842168, guid: 9e07394cf3815b946a98471554a09b0c,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 223851033399809454, guid: 9e07394cf3815b946a98471554a09b0c,
-        type: 2}
-      propertyPath: m_SortingOrder
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e07394cf3815b946a98471554a09b0c, type: 2}

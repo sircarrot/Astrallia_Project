@@ -24,6 +24,7 @@ namespace AstralliaProject
 
         public void ChangeScene(SceneEnum targetScene)
         {
+            Debug.Log("Change Scene: " + targetScene.ToString());
             previousScene = targetScene;
             uIManager.ScreenFadeOut(() =>
             {
