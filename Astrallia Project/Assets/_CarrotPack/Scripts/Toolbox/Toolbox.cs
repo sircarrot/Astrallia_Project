@@ -15,6 +15,8 @@ namespace CarrotPack
         /// </summary>
         private void Awake()
         {
+            if(Toolbox.Instance != this) { Destroy(this.gameObject); }
+
             DontDestroyOnLoad(gameObject);
 
             // Adds all manager to list first

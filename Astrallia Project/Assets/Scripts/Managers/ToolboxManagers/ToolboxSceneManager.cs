@@ -30,7 +30,10 @@ namespace AstralliaProject
             {
                 switch (targetScene)
                 {
+                    
+
                     case SceneEnum.HomeScene:
+                    default:
                         SceneManager.LoadScene((int)targetScene);
                         break;
                 }
