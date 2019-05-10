@@ -9,6 +9,7 @@ namespace AstralliaProject
     public class UIManager : MonoBehaviour, IManager
     {
         [Header("Player UI")]
+        public GameObject playerHpBar;
         public Slider hpSlider;
         public Text hpText;
         public Text levelText;
@@ -85,5 +86,16 @@ namespace AstralliaProject
             }
         }
         #endregion
+
+        public void StartGame()
+        {
+            playerHpBar.SetActive(true);
+        }
+
+        public void QuitGame()
+        {
+            playerHpBar.SetActive(true);
+            enemyHpBar.SetActive(false);
+        }
     }
 }
