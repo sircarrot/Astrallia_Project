@@ -9,13 +9,14 @@ namespace AstralliaProject
     {
         // Default set to home scene
         [SerializeField] public SceneEnum nextScene = SceneEnum.HomeScene;
+        [SerializeField] public SceneEnum currentScene = SceneEnum.HomeScene;
 
         private void OnTriggerEnter(Collider other)
         {
             Debug.Log("OnTrigger: " +  other.tag);
             if (other.tag == "Player")
             {
-                Toolbox.Instance.GetComponent<ToolboxSceneManager>().ChangeScene(nextScene);
+                Toolbox.Instance.GetComponent<ToolboxSceneManager>().ChangeScene(nextScene, currentScene);
             }
         }
     }

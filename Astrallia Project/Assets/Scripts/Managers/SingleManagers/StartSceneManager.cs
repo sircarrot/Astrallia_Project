@@ -31,7 +31,7 @@ namespace AstralliaProject
 
         public void StartGameEvent()
         {
-            Toolbox.Instance.GetManager<ToolboxSceneManager>().ChangeScene(SceneEnum.HomeScene);
+            Toolbox.Instance.GetManager<ToolboxSceneManager>().ChangeScene(SceneEnum.HomeScene, SceneEnum.StartScene);
         }
     }
 }

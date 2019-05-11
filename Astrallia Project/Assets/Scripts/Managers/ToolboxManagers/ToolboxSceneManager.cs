@@ -10,11 +10,18 @@ namespace AstralliaProject
     {
         private UIManager uIManager;
 
+        public SceneEnum PreviousScene
+        {
+            get {return previousScene; }
+        }
+
         private SceneEnum previousScene;
+        private SceneEnum currentScene;
 
         public void InitializeManager()
         {
             previousScene = SceneEnum.StartScene;
+            currentScene = SceneEnum.StartScene;
         }
 
         private void Start()
@@ -22,10 +29,10 @@ namespace AstralliaProject
             uIManager = Toolbox.Instance.GetManager<UIManager>();
         }
 
-        public void ChangeScene(SceneEnum targetScene)
+        public void ChangeScene(SceneEnum targetScene, SceneEnum fromScene)
         {
             Debug.Log("Change Scene: " + targetScene.ToString());
-            previousScene = targetScene;
+            previousScene = fromScene;
             uIManager.ScreenFadeOut(() =>
             {
                 switch (targetScene)
@@ -40,6 +47,8 @@ namespace AstralliaProject
                         uIManager.StartGame();
                         break;
                 }
+
+                currentScene = targetScene;
 
                 uIManager.ScreenFadeIn();
             });
