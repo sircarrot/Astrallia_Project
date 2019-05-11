@@ -17,7 +17,9 @@ namespace AstralliaProject
 
         private GameManager gameManager;
 
-        private static float aggroDistance = 6f;
+        public bool hostile = true;
+
+        public float aggroDistance = 6f;
         private bool chasePlayer = false;
 
         public static float attackDelay = 4f;
@@ -49,7 +51,7 @@ namespace AstralliaProject
 
             // Setting States
             //Debug.Log("Distance: " + (player.transform.position - gameObject.transform.position).magnitude);
-            if((player.transform.position - gameObject.transform.position).magnitude <= aggroDistance)
+            if((player.transform.position - gameObject.transform.position).magnitude <= aggroDistance && hostile)
             {
                 chasePlayer = true;
             }
