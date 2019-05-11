@@ -230,7 +230,7 @@ Transform:
   m_GameObject: {fileID: 1580525566385236}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 263.76, y: 1, z: 194.3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4294345042779436}
   - {fileID: 4000689248994378}
@@ -316,7 +316,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 1}
+  m_Size: {x: 1, y: 3, z: 1}
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!95 &95319726324401324
 Animator:
@@ -360,6 +360,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptableObject: {fileID: 11400000, guid: c2fb866cfd5e8d64a85eef68f455d182, type: 2}
+  hostile: 1
+  aggroDistance: 6
   attackCountdown: 4
 --- !u!137 &137441764143394532
 SkinnedMeshRenderer:
