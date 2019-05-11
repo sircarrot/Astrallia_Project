@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace AstralliaProject
 {
-    public class StartSceneManager : MonoBehaviour
+    public class StartGameManager : MonoBehaviour
     {
         [SerializeField] private Animator animator;
 

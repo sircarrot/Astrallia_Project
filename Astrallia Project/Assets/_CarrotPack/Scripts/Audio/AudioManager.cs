@@ -145,10 +145,29 @@ namespace CarrotPack
                 Debug.LogError("No Audio Clip Found in calling PlayBGM");
                 return;
             }
+            else if(audioClip == bgmAudioSource.clip)
+            {
+                Debug.LogWarning("Same Audio Clip is passed, will not replace Audio Clip");
+            }
+            else
+            {
+                bgmAudioSource.clip = audioClip;
+            }
 
             bgmAudioSource.volume = volume;
-            bgmAudioSource.clip = audioClip;
             bgmAudioSource.Play();
+        }
+
+        public void BGMPlayer(string clipname = null, PlayBGMType type = PlayBGMType.Repeat, float volume = 1f, float fadeDuration = 1f)
+        {
+            AudioClip audioClip = audioLibrary.audioLibrary[clipname];
+            if (audioClip == null)
+            {
+                Debug.LogError("No Audio Clip Found in calling PlayBGM");
+                return;
+            }
+
+            BGMPlayer(audioClip, type, volume, fadeDuration);
         }
 
         /// True for fade in, False for fade out 

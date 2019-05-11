@@ -142,7 +142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1440686258962328
 GameObject:
   m_ObjectHideFlags: 1
@@ -323,6 +323,7 @@ GameObject:
   - component: {fileID: 114393725028670024}
   - component: {fileID: 114050294783855996}
   - component: {fileID: 114707417258817578}
+  - component: {fileID: 114739100877371910}
   m_Layer: 0
   m_Name: Toolbox
   m_TagString: Untagged
@@ -794,6 +795,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36c548c5a63f69f49b0a7640e58c0402, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114739100877371910
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1802231847812974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dabf9f19e7e16374884f8b73cb632b9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioLibrary: {fileID: 11400000, guid: 740b34354c6eacc48b1836e3e20043e4, type: 2}
 --- !u!114 &114745574578273864
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1115,7 +1128,7 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.611, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}

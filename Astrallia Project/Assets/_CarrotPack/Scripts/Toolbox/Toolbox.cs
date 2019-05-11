@@ -15,7 +15,14 @@ namespace CarrotPack
         /// </summary>
         private void Awake()
         {
-            if(Toolbox.Instance != this) { Destroy(this.gameObject); }
+            Debug.Log("Toolbox Awake");
+            if(Toolbox.Instance != this) {
+                Debug.LogWarning("Destroying " + this.gameObject.name);
+                Destroy(this.gameObject);
+                return;
+            }
+
+            Debug.Log(this.gameObject.name + " Initializing");
 
             DontDestroyOnLoad(gameObject);
 
