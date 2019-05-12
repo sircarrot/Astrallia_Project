@@ -10,7 +10,9 @@ namespace AstralliaProject
 
     public class PlayerController : MonoBehaviour
     {
-        public float forwardSpeed = 7.0f;
+        [SerializeField] private float forwardSpeed = 7.0f;
+
+        public bool canMove = true;
 
         private CapsuleCollider col;
         private Rigidbody rb;
@@ -29,6 +31,8 @@ namespace AstralliaProject
         private GameManager gameManager;
 
         private bool detectAttack = false;
+
+        public NPCController targetNpc = null;
 
         static int damageState = Animator.StringToHash("Base Layer.Damage");
         static int deathState = Animator.StringToHash("Base Layer.Death");
@@ -52,6 +56,14 @@ namespace AstralliaProject
 
         void FixedUpdate()
         {
+            if (!canMove) return;
+
+            if(Input.GetButtonDown("Interact") && targetNpc != null)
+            {
+                targetNpc.Interact();
+                return;
+            }
+
             // Cannot move when damaged/dead
             currentBaseState = anim.GetCurrentAnimatorStateInfo(0);
             if(currentBaseState.fullPathHash == damageState 
@@ -148,6 +160,10 @@ namespace AstralliaProject
             playerData.Damage(rawDamage);
         }
 
+        public void Heal(int amount, bool healMax = false)
+        {
+            playerData.Heal(amount, healMax);
+        }
         #endregion
     }
 }

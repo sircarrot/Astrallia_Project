@@ -55,8 +55,13 @@ namespace AstralliaProject
             LevelUpEvent(level);
         }
 
-        public void Heal(int amount)
+        public void Heal(int amount, bool healMax = false)
         {
+            if(healMax)
+            {
+                amount = maxHp;
+            }
+
             currentHp += amount;
             if (currentHp > maxHp) currentHp = maxHp;
 

@@ -22,6 +22,8 @@ namespace AstralliaProject
         public Animator screenAnimator;
         private System.Action savedAction;
 
+        [Header("Subtitles")]
+        public Text subtitleText;
         private GameManager gameManager;
 
         public void InitializeManager()
@@ -96,6 +98,12 @@ namespace AstralliaProject
         {
             playerHpBar.SetActive(true);
             enemyHpBar.SetActive(false);
+        }
+
+        public void ShowSubtitles(string subtitles)
+        {
+            screenAnimator.SetTrigger("ShowSubtitle");
+            subtitleText.text = subtitles;
         }
     }
 }

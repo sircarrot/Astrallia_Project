@@ -22,7 +22,6 @@ namespace AstralliaProject
         public float aggroDistance = 6f;
         private bool chasePlayer = false;
 
-        public static float attackDelay = 4f;
         public float attackCountdown;
         private bool detectAttack = false;
 
@@ -78,7 +77,8 @@ namespace AstralliaProject
                 if (attackCountdown <= 0f)
                 {
                     Attack();
-                    attackCountdown = attackDelay;
+                    Debug.Log(enemyData.attackDelay);
+                    attackCountdown = enemyData.attackDelay;
                 }
             }
         }
@@ -92,7 +92,7 @@ namespace AstralliaProject
             gameManager = Toolbox.Instance.GetManager<GameManager>();
             player = gameManager.PlayerController;
 
-            attackCountdown = attackDelay;
+            attackCountdown = enemyData.attackDelay;
         }
 
         #region Basic Gameplay Functions

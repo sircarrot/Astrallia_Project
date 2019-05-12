@@ -9,6 +9,7 @@ public class EnemyData {
     public int maxHp;
     public int attack;
     public int expDrop;
+    public float attackDelay;
 
     public EnemyData(EnemyData enemyData)
     {
@@ -16,6 +17,7 @@ public class EnemyData {
         currentHp = maxHp;
         attack = enemyData.attack;
         expDrop = enemyData.expDrop;
+        attackDelay = enemyData.attackDelay;
     }
 
 }

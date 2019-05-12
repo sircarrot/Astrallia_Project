@@ -16,3 +16,4 @@ MonoBehaviour:
     maxHp: 30
     attack: 10
     expDrop: 20
+    attackDelay: 6
