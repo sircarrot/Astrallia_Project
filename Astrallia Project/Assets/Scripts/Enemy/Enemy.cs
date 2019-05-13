@@ -119,9 +119,9 @@ namespace AstralliaProject
             animator.SetBool("Death", true);
 
             gameManager.KillEnemy(enemyData.expDrop);
+            Toolbox.Instance.GetManager<UIManager>().HideEnemyHPBar();
 
             StartCoroutine(DeathCoroutine());
-            //Destroy(this);
         }
 
         private IEnumerator DeathCoroutine()

@@ -15,5 +15,5 @@ MonoBehaviour:
     currentHp: 0
     maxHp: 30
     attack: 10
-    expDrop: 20
-    attackDelay: 6
+    expDrop: 30
+    attackDelay: 5

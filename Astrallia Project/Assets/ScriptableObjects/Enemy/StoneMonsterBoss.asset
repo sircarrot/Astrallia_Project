@@ -14,6 +14,6 @@ MonoBehaviour:
   enemyData:
     currentHp: 0
     maxHp: 100
-    attack: 10
+    attack: 15
     expDrop: 100
     attackDelay: 10

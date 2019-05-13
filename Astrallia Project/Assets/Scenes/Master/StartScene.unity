@@ -555,43 +555,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 224278328403079630, guid: 9e07394cf3815b946a98471554a09b0c,
-        type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224865537386495438, guid: 9e07394cf3815b946a98471554a09b0c,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4466147026900636, guid: 9e07394cf3815b946a98471554a09b0c, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224950872099242212, guid: 9e07394cf3815b946a98471554a09b0c,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1431642251670212, guid: 9e07394cf3815b946a98471554a09b0c, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224278929393549934, guid: 9e07394cf3815b946a98471554a09b0c,
-        type: 2}
-      propertyPath: m_AnchorMax.x
-      value: 0.611
-      objectReference: {fileID: 0}
-    - target: {fileID: 224278929393549934, guid: 9e07394cf3815b946a98471554a09b0c,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1802231847812974, guid: 9e07394cf3815b946a98471554a09b0c, type: 2}
-      propertyPath: m_Name
-      value: Toolbox
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e07394cf3815b946a98471554a09b0c, type: 2}
   m_IsPrefabAsset: 0

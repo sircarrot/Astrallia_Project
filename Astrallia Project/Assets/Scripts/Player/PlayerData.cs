@@ -45,14 +45,15 @@ namespace AstralliaProject
 
         public void LevelUp()
         {
-            Heal(maxHp);
-            attackPower++;
             maxHp += 5;
+            attackPower += 2;
+            Heal(maxHp);
             // Don't raise defense power
             level++;
             
             // Call event
             LevelUpEvent(level);
+            ChangeHPEvent(currentHp, maxHp);
         }
 
         public void Heal(int amount, bool healMax = false)

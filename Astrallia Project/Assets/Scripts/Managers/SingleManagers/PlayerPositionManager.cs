@@ -13,7 +13,7 @@ namespace AstralliaProject
 
         public void Awake()
         {
-            SceneEnum previousScene = Toolbox.Instance.GetComponent<ToolboxSceneManager>().PreviousScene;
+            SceneEnum previousScene = Toolbox.Instance.GetManager<ToolboxSceneManager>().PreviousScene;
 
             Debug.Log("Set Player Position: " + previousScene.ToString());
 

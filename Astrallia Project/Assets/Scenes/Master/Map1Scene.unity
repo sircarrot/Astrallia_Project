@@ -229,18 +229,6 @@ Prefab:
       propertyPath: m_Name
       value: FantasyBee (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 4782758392598236, guid: 575a1ab8af2100849ae1fe7f39f6d86b, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 302.365
-      objectReference: {fileID: 0}
-    - target: {fileID: 4782758392598236, guid: 575a1ab8af2100849ae1fe7f39f6d86b, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1.5000002
-      objectReference: {fileID: 0}
-    - target: {fileID: 4782758392598236, guid: 575a1ab8af2100849ae1fe7f39f6d86b, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1.5000002
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 575a1ab8af2100849ae1fe7f39f6d86b, type: 2}
   m_IsPrefabAsset: 0
@@ -501,18 +489,6 @@ Prefab:
       propertyPath: m_Name
       value: StoneMonster (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 4662272215459646, guid: 8308aa95091bc5b4b806d7c1b4c8a300, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 116.420006
-      objectReference: {fileID: 0}
-    - target: {fileID: 4662272215459646, guid: 8308aa95091bc5b4b806d7c1b4c8a300, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1.4999999
-      objectReference: {fileID: 0}
-    - target: {fileID: 4662272215459646, guid: 8308aa95091bc5b4b806d7c1b4c8a300, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1.4999999
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8308aa95091bc5b4b806d7c1b4c8a300, type: 2}
   m_IsPrefabAsset: 0
@@ -693,18 +669,6 @@ Prefab:
       propertyPath: m_Name
       value: FantasyBee (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 4782758392598236, guid: 575a1ab8af2100849ae1fe7f39f6d86b, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 160.36801
-      objectReference: {fileID: 0}
-    - target: {fileID: 4782758392598236, guid: 575a1ab8af2100849ae1fe7f39f6d86b, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1.5000005
-      objectReference: {fileID: 0}
-    - target: {fileID: 4782758392598236, guid: 575a1ab8af2100849ae1fe7f39f6d86b, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1.5000005
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 575a1ab8af2100849ae1fe7f39f6d86b, type: 2}
   m_IsPrefabAsset: 0
@@ -756,18 +720,6 @@ Prefab:
       propertyPath: m_Name
       value: StoneMonster (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 4662272215459646, guid: 8308aa95091bc5b4b806d7c1b4c8a300, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 249.652
-      objectReference: {fileID: 0}
-    - target: {fileID: 4662272215459646, guid: 8308aa95091bc5b4b806d7c1b4c8a300, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1.5000002
-      objectReference: {fileID: 0}
-    - target: {fileID: 4662272215459646, guid: 8308aa95091bc5b4b806d7c1b4c8a300, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1.5000002
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8308aa95091bc5b4b806d7c1b4c8a300, type: 2}
   m_IsPrefabAsset: 0
@@ -813,10 +765,6 @@ Prefab:
     - target: {fileID: 1580525566385236, guid: 8308aa95091bc5b4b806d7c1b4c8a300, type: 2}
       propertyPath: m_Name
       value: StoneMonster (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4662272215459646, guid: 8308aa95091bc5b4b806d7c1b4c8a300, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 378.119
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8308aa95091bc5b4b806d7c1b4c8a300, type: 2}
@@ -1050,18 +998,6 @@ Prefab:
       propertyPath: m_Name
       value: StoneMonster (8)
       objectReference: {fileID: 0}
-    - target: {fileID: 4662272215459646, guid: 8308aa95091bc5b4b806d7c1b4c8a300, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 137.074
-      objectReference: {fileID: 0}
-    - target: {fileID: 4662272215459646, guid: 8308aa95091bc5b4b806d7c1b4c8a300, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1.5000005
-      objectReference: {fileID: 0}
-    - target: {fileID: 4662272215459646, guid: 8308aa95091bc5b4b806d7c1b4c8a300, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1.5000005
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8308aa95091bc5b4b806d7c1b4c8a300, type: 2}
   m_IsPrefabAsset: 0
@@ -1159,18 +1095,6 @@ Prefab:
     - target: {fileID: 1966615397628340, guid: 575a1ab8af2100849ae1fe7f39f6d86b, type: 2}
       propertyPath: m_Name
       value: FantasyBee (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4782758392598236, guid: 575a1ab8af2100849ae1fe7f39f6d86b, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 201.54199
-      objectReference: {fileID: 0}
-    - target: {fileID: 4782758392598236, guid: 575a1ab8af2100849ae1fe7f39f6d86b, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1.5000004
-      objectReference: {fileID: 0}
-    - target: {fileID: 4782758392598236, guid: 575a1ab8af2100849ae1fe7f39f6d86b, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1.5000004
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 575a1ab8af2100849ae1fe7f39f6d86b, type: 2}
@@ -1463,18 +1387,6 @@ Prefab:
       propertyPath: m_Name
       value: FantasyBee (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 4782758392598236, guid: 575a1ab8af2100849ae1fe7f39f6d86b, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 342.413
-      objectReference: {fileID: 0}
-    - target: {fileID: 4782758392598236, guid: 575a1ab8af2100849ae1fe7f39f6d86b, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4782758392598236, guid: 575a1ab8af2100849ae1fe7f39f6d86b, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 575a1ab8af2100849ae1fe7f39f6d86b, type: 2}
   m_IsPrefabAsset: 0
@@ -1656,10 +1568,6 @@ Prefab:
       propertyPath: m_Name
       value: FantasyBee (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 4782758392598236, guid: 575a1ab8af2100849ae1fe7f39f6d86b, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 152.942
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 575a1ab8af2100849ae1fe7f39f6d86b, type: 2}
   m_IsPrefabAsset: 0
@@ -1710,18 +1618,6 @@ Prefab:
     - target: {fileID: 1580525566385236, guid: 8308aa95091bc5b4b806d7c1b4c8a300, type: 2}
       propertyPath: m_Name
       value: StoneMonster (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4662272215459646, guid: 8308aa95091bc5b4b806d7c1b4c8a300, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 105.204
-      objectReference: {fileID: 0}
-    - target: {fileID: 4662272215459646, guid: 8308aa95091bc5b4b806d7c1b4c8a300, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1.5000008
-      objectReference: {fileID: 0}
-    - target: {fileID: 4662272215459646, guid: 8308aa95091bc5b4b806d7c1b4c8a300, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1.5000008
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8308aa95091bc5b4b806d7c1b4c8a300, type: 2}
@@ -1872,18 +1768,6 @@ Prefab:
       propertyPath: m_Name
       value: FantasyBee (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 4782758392598236, guid: 575a1ab8af2100849ae1fe7f39f6d86b, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 277
-      objectReference: {fileID: 0}
-    - target: {fileID: 4782758392598236, guid: 575a1ab8af2100849ae1fe7f39f6d86b, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1.5000011
-      objectReference: {fileID: 0}
-    - target: {fileID: 4782758392598236, guid: 575a1ab8af2100849ae1fe7f39f6d86b, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1.5000011
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 575a1ab8af2100849ae1fe7f39f6d86b, type: 2}
   m_IsPrefabAsset: 0
@@ -1962,10 +1846,6 @@ Prefab:
     - target: {fileID: 4662272215459646, guid: 8308aa95091bc5b4b806d7c1b4c8a300, type: 2}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4662272215459646, guid: 8308aa95091bc5b4b806d7c1b4c8a300, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 189.071
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8308aa95091bc5b4b806d7c1b4c8a300, type: 2}
@@ -2359,17 +2239,10 @@ Prefab:
       propertyPath: m_Name
       value: FantasyBee (8)
       objectReference: {fileID: 0}
-    - target: {fileID: 4782758392598236, guid: 575a1ab8af2100849ae1fe7f39f6d86b, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 272.047
-      objectReference: {fileID: 0}
-    - target: {fileID: 4782758392598236, guid: 575a1ab8af2100849ae1fe7f39f6d86b, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4782758392598236, guid: 575a1ab8af2100849ae1fe7f39f6d86b, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1.5
+    - target: {fileID: 114509564510713098, guid: 575a1ab8af2100849ae1fe7f39f6d86b,
+        type: 2}
+      propertyPath: attackCountdown
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 575a1ab8af2100849ae1fe7f39f6d86b, type: 2}
@@ -2619,18 +2492,6 @@ Prefab:
       propertyPath: m_Name
       value: StoneMonster (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 4662272215459646, guid: 8308aa95091bc5b4b806d7c1b4c8a300, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 363.593
-      objectReference: {fileID: 0}
-    - target: {fileID: 4662272215459646, guid: 8308aa95091bc5b4b806d7c1b4c8a300, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1.5000002
-      objectReference: {fileID: 0}
-    - target: {fileID: 4662272215459646, guid: 8308aa95091bc5b4b806d7c1b4c8a300, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1.5000002
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8308aa95091bc5b4b806d7c1b4c8a300, type: 2}
   m_IsPrefabAsset: 0
@@ -2782,18 +2643,6 @@ Prefab:
     - target: {fileID: 1966615397628340, guid: 575a1ab8af2100849ae1fe7f39f6d86b, type: 2}
       propertyPath: m_Name
       value: FantasyBee (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4782758392598236, guid: 575a1ab8af2100849ae1fe7f39f6d86b, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 169.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 4782758392598236, guid: 575a1ab8af2100849ae1fe7f39f6d86b, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4782758392598236, guid: 575a1ab8af2100849ae1fe7f39f6d86b, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 575a1ab8af2100849ae1fe7f39f6d86b, type: 2}

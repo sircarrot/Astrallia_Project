@@ -16,7 +16,7 @@ namespace AstralliaProject
             Debug.Log("OnTrigger: " +  other.tag);
             if (other.tag == "Player")
             {
-                Toolbox.Instance.GetComponent<ToolboxSceneManager>().ChangeScene(nextScene, currentScene);
+                Toolbox.Instance.GetManager<ToolboxSceneManager>().ChangeScene(nextScene, currentScene);
             }
         }
     }

@@ -101,11 +101,13 @@ namespace CarrotPack
 
         public void BGMPlayer(AudioClip audioClip = null, PlayBGMType type = PlayBGMType.Repeat, float volume = 1f, float fadeDuration = 1f)
         {
+
+
             // BGM Player Functions
             switch (type)
             {
                 case PlayBGMType.Repeat:
-                    if (bgmAudioSource.isPlaying) { bgmAudioSource.Stop(); }
+                    //if (bgmAudioSource.isPlaying) { bgmAudioSource.Stop(); }
                     bgmAudioSource.loop = true;
                     break;
 
@@ -145,15 +147,13 @@ namespace CarrotPack
                 Debug.LogError("No Audio Clip Found in calling PlayBGM");
                 return;
             }
-            else if(audioClip == bgmAudioSource.clip)
+            else if (audioClip == bgmAudioSource.clip)
             {
                 Debug.LogWarning("Same Audio Clip is passed, will not replace Audio Clip");
-            }
-            else
-            {
-                bgmAudioSource.clip = audioClip;
+                return;
             }
 
+            bgmAudioSource.clip = audioClip;
             bgmAudioSource.volume = volume;
             bgmAudioSource.Play();
         }
