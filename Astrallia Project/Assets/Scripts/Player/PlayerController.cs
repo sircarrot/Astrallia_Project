@@ -146,6 +146,16 @@ namespace AstralliaProject
                 detectAttack = false;
             }
         }
+
+        // Restart game with full hp
+        public void DeathEvent()
+        {
+            Toolbox.Instance.GetManager<ToolboxSceneManager>().ChangeScene(SceneEnum.StartScene, SceneEnum.StartScene, () =>
+            {
+                Heal(0, true);
+
+            });
+        }
         #endregion
 
         #region Data Usage Functions
@@ -157,7 +167,11 @@ namespace AstralliaProject
         public void Damage(int rawDamage)
         {
             anim.SetTrigger("Damage");
-            playerData.Damage(rawDamage);
+
+            if(playerData.Damage(rawDamage))
+            {
+                anim.SetBool("Death", true);
+            }
         }
 
         public void Heal(int amount, bool healMax = false)

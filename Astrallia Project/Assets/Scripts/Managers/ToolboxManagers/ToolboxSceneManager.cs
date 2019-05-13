@@ -33,7 +33,7 @@ namespace AstralliaProject
             uIManager = Toolbox.Instance.GetManager<UIManager>();
         }
 
-        public void ChangeScene(SceneEnum targetScene, SceneEnum fromScene)
+        public void ChangeScene(SceneEnum targetScene, SceneEnum fromScene, System.Action action = null)
         {
             Debug.Log("Change Scene: " + targetScene.ToString());
             previousScene = fromScene;
@@ -53,6 +53,8 @@ namespace AstralliaProject
                 }
 
                 currentScene = targetScene;
+
+                if (action != null) { action.Invoke(); }
 
                 uIManager.ScreenFadeIn();
             });

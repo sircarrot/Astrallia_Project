@@ -25,12 +25,20 @@ namespace AstralliaProject
             LevelUpEvent(level);
         }
 
-        public void Damage(int rawDamage)
+        public bool Damage(int rawDamage)
         {
             // Min damage of 1
             currentHp -= Mathf.Max(rawDamage - defensePower, 1);
 
+            if (currentHp <= 0f)
+            {
+                currentHp = 0;
+                ChangeHPEvent(currentHp, maxHp);
+                return true;
+            }
+
             ChangeHPEvent(currentHp, maxHp);
+            return false;
         }
 
         public void GainExp(int expGain)
