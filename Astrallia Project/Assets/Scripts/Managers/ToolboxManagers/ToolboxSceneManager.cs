@@ -12,10 +12,14 @@ namespace AstralliaProject
 
         public SceneEnum PreviousScene
         {
-            get {return previousScene; }
+            get { return previousScene; }
         }
-
         private SceneEnum previousScene;
+
+        public SceneEnum CurrentScene
+        {
+            get { return currentScene; }
+        }
         private SceneEnum currentScene;
 
         public void InitializeManager()

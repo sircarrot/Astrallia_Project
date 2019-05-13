@@ -25,10 +25,13 @@ namespace AstralliaProject
 
         public UIManager uiManager;
 
+        private bool gamePaused = false;
+        private ToolboxSceneManager toolboxSceneManager;
 
         public void InitializeManager()
         {
             uiManager = Toolbox.Instance.GetManager<UIManager>();
+            toolboxSceneManager = Toolbox.Instance.GetManager<ToolboxSceneManager>();
         }
 
         #region PlayerFunctions
@@ -42,5 +45,40 @@ namespace AstralliaProject
             uiManager.UpdateEnemyHP(currentHp, maxHp);
         }
         #endregion
+
+        public void PauseGame()
+        {
+            if(toolboxSceneManager.CurrentScene != SceneEnum.StartScene)
+            {
+                Time.timeScale = 0;
+                gamePaused = true;
+                uiManager.PauseGame();
+            }
+        }
+
+        public void ResumeGame()
+        {
+            if (toolboxSceneManager.CurrentScene != SceneEnum.StartScene)
+            {
+                Time.timeScale = 1;
+                gamePaused = false;
+                uiManager.ResumeGame();
+            }
+        }
+
+        private void Update()
+        {
+            if (Input.GetButtonDown("Pause"))
+            {
+                if (gamePaused)
+                {
+                    ResumeGame();
+                }
+                else
+                {
+                    PauseGame();
+                }
+            }
+        }
     }
 }

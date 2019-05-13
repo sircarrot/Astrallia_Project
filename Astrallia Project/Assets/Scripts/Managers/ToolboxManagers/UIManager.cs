@@ -26,6 +26,9 @@ namespace AstralliaProject
         public Text subtitleText;
         private GameManager gameManager;
 
+        [Header("Pause Game")]
+        public GameObject pauseGame;
+
         public void InitializeManager()
         {
             gameManager = Toolbox.Instance.GetManager<GameManager>();
@@ -96,7 +99,7 @@ namespace AstralliaProject
 
         public void QuitGame()
         {
-            playerHpBar.SetActive(true);
+            playerHpBar.SetActive(false);
             enemyHpBar.SetActive(false);
         }
 
@@ -104,6 +107,16 @@ namespace AstralliaProject
         {
             screenAnimator.SetTrigger("ShowSubtitle");
             subtitleText.text = subtitles;
+        }
+
+        public void PauseGame()
+        {
+            pauseGame.SetActive(true);
+        }
+
+        public void ResumeGame()
+        {
+            pauseGame.SetActive(false);
         }
     }
 }
